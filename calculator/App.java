@@ -43,8 +43,11 @@ public class App {
                 results[count] = result;
                 count++;
             } else {
-                System.out.println("배열이 가득차 결과를 저장할 수 없습니다.");
-                break;
+                // 배열이 가득 찬 경우, 결과를 한 칸씩 앞으로 이동시키고 마지막 위치에 새로운 결과 저장
+                for (int i = 0; i < 9; i++) {
+                    results[i] = results[i + 1];
+                }
+                results[9] = result;
             }
         }
 
