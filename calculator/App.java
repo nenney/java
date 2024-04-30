@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int[] results = new int[10]; // 연산 결과를 저장할 배열 생성
+        int count = 0; // 현재 저장된 결과 개수를 나타내는 변수
 
         while (true) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -35,6 +37,20 @@ public class App {
 
             // 연산 결과 출력
             System.out.println("결과: " + result);
+
+            // 결과값 배열에 저장
+            if (count < 10) {
+                results[count] = result;
+                count++;
+            } else {
+                System.out.println("배열이 가득차 결과를 저장할 수 없습니다.");
+                break;
+            }
+        }
+
+        System.out.println("저장된 결과");
+        for (int i = 0; i < count; i++) { // 반복문을 통해 배열에 저장된 결과를 가져옵니다.
+            System.out.println(results[i]);
         }
     }
 }
