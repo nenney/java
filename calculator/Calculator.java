@@ -7,7 +7,7 @@ public class Calculator {
     private List<Integer> results;
 
     public Calculator() {
-        results = new ArrayList<>();
+        this.results = new ArrayList<>(); // 생성자에서 results를 초기화합니다.
     }
 
     public int calculate(int firstNumber, int secondNumber, char operator) throws ArithmeticException, IllegalArgumentException {
