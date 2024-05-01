@@ -1,5 +1,7 @@
 package calculator;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -11,33 +13,35 @@ public class App {
             System.out.println("2. 원의 넓이 계산");
             System.out.print("원하는 기능을 선택하세요 (숫자 입력): ");
             int choice = sc.nextInt();
-            sc.nextLine(); // 개행문자 처리
+            sc.nextLine();
 
             switch (choice) {
                 case 1:
-                    // 사칙연산 계산 구현
                     System.out.print("첫 번째 숫자를 입력하세요: ");
-                    int num1 = sc.nextInt();
+                    double num1 = sc.nextDouble();
                     System.out.print("두 번째 숫자를 입력하세요: ");
-                    int num2 = sc.nextInt();
+                    double num2 = sc.nextDouble();
                     System.out.print("사칙연산 기호를 입력하세요: ");
                     char operator = sc.next().charAt(0);
                     try {
-                        int result = Calculator.calculate(num1, num2, operator);
-                        System.out.println("결과: " + result);
+                        double result = ArithmeticCalculator.calculate(getOperation(operator), num1, num2);
+                        System.out.println("Result: " + result);
                     } catch (Exception e) {
-                        System.out.println("에러 발생: " + e.getMessage());
+                        System.out.println("Error: " + e.getMessage());
                     }
                     break;
                 case 2:
-                    // 원의 넓이 계산 구현
-                    System.out.print("반지름을 입력하세요: ");
+                    System.out.print("Enter the radius: ");
                     double radius = sc.nextDouble();
-                    double area = Calculator.calculateCircleArea(radius);
-                    System.out.println("원의 넓이: " + area);
+                    try {
+                        double area = CircleCalculator.calculate(Operation.CIRCLE_AREA, radius);
+                        System.out.println("Circle area: " + area);
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
                     break;
                 default:
-                    System.out.println("잘못된 입력입니다. 다시 시도해주세요.");
+                    System.out.println("Invalid input. Please try again.");
             }
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료): ");
@@ -47,12 +51,26 @@ public class App {
             }
         }
 
-        // 저장된 원의 넓이 값들 전체 조회
-        System.out.println("저장된 원의 넓이");
-        for (double area : Calculator.getAllCircleAreas()) {
+        System.out.println("Stored circle areas:");
+        for (Double area : Calculator.getAllCircleAreas()) {
             System.out.println(area);
         }
 
         sc.close();
+    }
+
+    private static Operation getOperation(char operator) {
+        switch (operator) {
+            case '+':
+                return Operation.ADDITION;
+            case '-':
+                return Operation.SUBTRACTION;
+            case '*':
+                return Operation.MULTIPLICATION;
+            case '/':
+                return Operation.DIVISION;
+            default:
+                throw new IllegalArgumentException("Invalid operation.");
+        }
     }
 }
