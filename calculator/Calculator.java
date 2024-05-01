@@ -43,4 +43,9 @@ public class Calculator {
             results.remove(0);
         }
     }
+
+    // 저장된 결과 조회하는 메서드
+    public List<Integer> getAllResults() {
+        return new ArrayList<>(results);
+    }
 }

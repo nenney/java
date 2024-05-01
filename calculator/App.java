@@ -35,7 +35,7 @@ public class App {
 
         // 간접 접근을 통해 결과 출력
         System.out.println("저장된 결과");
-        for (int result : calculator.getResults()) {
+        for (int result : calculator.getAllResults()) {
             System.out.println(result);
         }
 
