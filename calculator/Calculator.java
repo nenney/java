@@ -4,13 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    private List<Integer> results;
+    // 원의 넓이 결과를 저장하는 컬렉션 타입의 필드 선언 및 생성
+    private static final List<Double> circleAreas = new ArrayList<>();
 
+    // 생성자 수정
     public Calculator() {
-        this.results = new ArrayList<>(); // 생성자에서 results를 초기화합니다.
+        // 외부에서 직접 접근할 수 없도록 private으로 초기화됩니다.
     }
 
-    public int calculate(int firstNumber, int secondNumber, char operator) throws ArithmeticException, IllegalArgumentException {
+    // 사칙연산을 계산하는 메서드
+    public static int calculate(int firstNumber, int secondNumber, char operator) throws ArithmeticException, IllegalArgumentException {
         int result = switch (operator) {
             case '+' -> firstNumber + secondNumber;
             case '-' -> firstNumber - secondNumber;
@@ -23,29 +26,20 @@ public class Calculator {
             }
             default -> throw new IllegalArgumentException("잘못된 연산 기호입니다.");
         };
-        results.add(result);
         return result;
     }
 
-    // Getter 메서드
-    public List<Integer> getResults() {
-        return results;
+    // 원의 넓이를 구하는 메서드
+    public static double calculateCircleArea(double radius) {
+        // 원의 넓이 계산 구현
+        double area = Math.PI * Math.pow(radius, 2);
+        // 결과를 저장
+        circleAreas.add(area);
+        return area;
     }
 
-    // Setter 메서드 (예시)
-    public void setResults(List<Integer> results) {
-        this.results = results;
-    }
-
-    // 가장 먼저 저장된 데이터 삭제하는 메서드
-    public void deleteFirstResult() {
-        if (!results.isEmpty()) {
-            results.remove(0);
-        }
-    }
-
-    // 저장된 결과 조회하는 메서드
-    public List<Integer> getAllResults() {
-        return new ArrayList<>(results);
+    // 원의 넓이 결과값들을 조회하는 메서드
+    public static List<Double> getAllCircleAreas() {
+        return new ArrayList<>(circleAreas);
     }
 }
