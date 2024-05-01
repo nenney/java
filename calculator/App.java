@@ -30,6 +30,9 @@ public class App {
             }
         }
 
+        // 연산 결과 삭제
+        calculator.deleteFirstResult();
+
         // 간접 접근을 통해 결과 출력
         System.out.println("저장된 결과");
         for (int result : calculator.getResults()) {
