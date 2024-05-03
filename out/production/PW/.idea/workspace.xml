@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2f9bc63-0913-443e-be9d-e0741fa089e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/calculator/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculator/AddOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculator/DivideOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculator/MultiplyOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculator/SubtractOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculator/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculator/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculator/ArithmeticCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculator/ArithmeticCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculator/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculator/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculator/CircleCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculator/CircleCalculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +89,9 @@
       <option name="presentableId" value="Default" />
       <updated>1714494567732</updated>
       <workItem from="1714494569139" duration="6430000" />
-      <workItem from="1714523149402" duration="2887000" />
+      <workItem from="1714523149402" duration="9212000" />
+      <workItem from="1714699139021" duration="923000" />
+      <workItem from="1714712699295" duration="1637000" />
     </task>
     <servers />
   </component>
